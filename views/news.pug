@@ -3,3 +3,13 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  form(method="get")
+    input(type="text" name="search" value=search)
+    input(type="submit" value="szukaj")
+
+  each item,index in data
+    article
+      h2(class="title")=item.title
+      p(class="date")=item.created
+      p(class="desc")=item.description
